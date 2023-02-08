@@ -1,4 +1,122 @@
-.App {
+/**************************************************
+************ Global Reset
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #333;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+/**************************************************
+************ Header
+*/
+
+.header {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 2rem 1.6rem;
+  background-color: #f7f7f7;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__primary-menu {
+  display: flex;
+  align-items: center;
+}
+
+.header__primary-menu-list {
+  display: flex;
+  align-items: center;
+}
+
+.header__primary-menu-list > li {
+  font-size: 1.6rem;
+  padding: 1.4rem 2rem;
+}
+
+.header__primary-menu-list > li > a {
+  text-decoration: none;
+  color: #333;
+}
+
+.logo__image {
+  width: 20rem;
+}
+
+/**************************************************
+************ Main
+*/
+.main {
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.section {
+  padding: 2rem 1.6rem;
+}
+
+/**************************************************
+************ Footer
+*/
+
+.footer {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 2rem 1.6rem;
+  background-color: #94b4a0;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__menus {
+  flex: 1;
+  max-width: 30%;
+
+  display: flex;
+  background-color: aqua;
+}
+
+.footer > .logo {
+  margin-right: auto;
+}
+
+.footer__menus > nav {
+  flex: 1;  
+}
+
+.footer__menus > nav > li > {
+
+}
+
+
+.footer__menus > nav > li > a {
+  color: #333;
+  text-decoration: none;
+}
+
+/**************************************************
+************ Create-react-app Default CSS
+*/
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +153,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
