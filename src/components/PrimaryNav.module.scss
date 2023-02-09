@@ -1,0 +1,19 @@
+.Box {
+    display: flex;
+    align-items: center;
+}
+
+.List {
+    display: flex;
+    align-items: center;
+}
+
+.Item {
+font-size: 1.6rem;
+padding: 1.4rem 2rem;
+}
+
+.Link {
+text-decoration: none;
+color: #333;
+}

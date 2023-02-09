@@ -1,38 +1,84 @@
 import React from 'react';
 import Logo from './Logo';
+import VSpreadMenu from './VSpreadMenu';
+import styles from './Footer.module.scss';
+
+const menuList = {
+    list1: {
+        heading: 'Site Menu',
+        links: [
+            {
+                label: 'Home',
+                url: '#'
+            },
+            {
+                label: 'About',
+                url: '#'
+            },
+            {
+                label: 'Menu',
+                url: '#'
+            },
+            {
+                label: 'Reservation',
+                url: '#'
+            },
+            {
+                label: 'Online Order',
+                url: '#'
+            },
+            {
+                label: 'Login',
+                url: '#'
+            }
+        ]
+    },
+
+    list2: {
+        heading: 'Second Menu',
+        links: [
+            {
+                label: 'Item1',
+                url: '#'
+            },
+            {
+                label: 'Item2',
+                url: '#'
+            },
+            {
+                label: 'Item3',
+                url: '#'
+            }
+        ]
+    },
+
+    list3: {
+        heading: 'Third Menu',
+        links: [
+            {
+                label: 'Item1',
+                url: '#'
+            },
+            {
+                label: 'Item2',
+                url: '#'
+            },
+            {
+                label: 'Item3',
+                url: '#'
+            }
+        ]
+    }
+}
 
 const Footer = () => {
     return (
-        <footer class="footer">
+        <footer className={styles.Box}>
             <Logo />
-            <div class="footer__menus">
-                <nav aria-label="Site Menu">
-                    <ul>
-                    <h3>Site Menu</h3> 
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Reservations</a></li>
-                    <li><a href="#">Order Online</a></li>
-                    <li><a href="#">Login</a></li>
-                    </ul>
-                </nav>
-                <nav aria-label="Contact Menu">
-                    <ul>
-                    <h3>Contact</h3> 
-                    <li><a href="#">Address</a></li>
-                    <li><a href="#">Phone Number</a></li>
-                    <li><a href="#">Email</a></li>
-                    </ul>
-                </nav>
-                <nav aria-label="Social Media Link">
-                    <ul>
-                    <h3>Social Media</h3> 
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    </ul>
-                </nav>
+            <div className={styles.Columns}>
+                <VSpreadMenu columnMenuData={menuList.list1} />
+                <VSpreadMenu columnMenuData={menuList.list2} />
+                <VSpreadMenu columnMenuData={menuList.list3} />
             </div>
         </footer>
     );

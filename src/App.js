@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <React.Fragment className="App">
+    <React.Fragment>
       <Header />
       <Main />
       <Footer />

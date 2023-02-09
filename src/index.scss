@@ -5,6 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #333;
+  box-sizing: border-box;
+}
+
+/**************************************************
+************ Global Reset
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+#root {
+  max-width: 114rem;
+  margin: 0 auto;
 }
 
 code {

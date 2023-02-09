@@ -1,11 +1,14 @@
 import React from 'react';
-import LogoImage from '../img/Logo.svg';
+import styles from './Logo.module.scss';
+import LogoSVG from '../img/Logo.svg';
 
 const Logo = () => {
     return (
-        <a href="#" class="logo">
-            <img src={LogoImage} class="logo__img"/>
-        </a>
+        <figure className={styles.Box}>
+            <a href="#" className={styles.Link}>
+                <img src={LogoSVG} className={styles.Image}/>
+            </a>
+        </figure>
     )
 }
 

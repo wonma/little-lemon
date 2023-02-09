@@ -1,0 +1,17 @@
+.Box {
+    max-width: 114rem;
+    margin: 0 auto;
+    padding: 2rem 1.6rem;
+    background-color: #94b4a0;
+  
+    display: flex;
+    justify-content: space-between;
+
+  & > *:first-child {
+    margin-right: auto;
+  }
+}
+  
+.Columns {
+    display: flex;
+}
