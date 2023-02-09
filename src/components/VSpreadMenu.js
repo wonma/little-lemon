@@ -8,7 +8,7 @@ const VSpreadMenu = ({columnMenuData}) => {
                 {
                     columnMenuData.links.map((link) => {
                         return (
-                            <li><a href={link.url}>{link.label}</a></li>
+                            <li key={link.label}><a href={link.url}>{link.label}</a></li>
                         )
                     })
                 }

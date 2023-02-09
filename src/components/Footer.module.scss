@@ -1,11 +1,13 @@
-.Box {
-    max-width: 114rem;
-    margin: 0 auto;
+.FullWidth {
     padding: 2rem 1.6rem;
     background-color: #94b4a0;
-  
-    display: flex;
-    justify-content: space-between;
+}
+
+.Content {
+  max-width: 96rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 
   & > *:first-child {
     margin-right: auto;

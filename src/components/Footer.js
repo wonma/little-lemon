@@ -73,12 +73,14 @@ const menuList = {
 
 const Footer = () => {
     return (
-        <footer className={styles.Box}>
-            <Logo />
-            <div className={styles.Columns}>
-                <VSpreadMenu columnMenuData={menuList.list1} />
-                <VSpreadMenu columnMenuData={menuList.list2} />
-                <VSpreadMenu columnMenuData={menuList.list3} />
+        <footer className={styles.FullWidth}>
+            <div className={styles.Content}>
+                <Logo />
+                <div className={styles.Columns}>
+                    <VSpreadMenu columnMenuData={menuList.list1} />
+                    <VSpreadMenu columnMenuData={menuList.list2} />
+                    <VSpreadMenu columnMenuData={menuList.list3} />
+                </div>
             </div>
         </footer>
     );

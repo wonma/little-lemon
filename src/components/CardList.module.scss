@@ -1,0 +1,16 @@
+
+.col_3 {
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, minmax(25rem, 1fr));
+}
+
+.col_4 {
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, minmax(15rem, 1fr));
+}
