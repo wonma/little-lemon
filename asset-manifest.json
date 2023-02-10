@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/little-lemon/static/css/main.785c6038.css",
-    "main.js": "/little-lemon/static/js/main.e86d7d93.js",
+    "main.css": "/little-lemon/static/css/main.ad1a8e7a.css",
+    "main.js": "/little-lemon/static/js/main.da2baf9c.js",
     "static/js/787.a2f6b77c.chunk.js": "/little-lemon/static/js/787.a2f6b77c.chunk.js",
-    "static/media/Logo.svg": "/little-lemon/static/media/Logo.f72c913c48c5334f78f2c336ec36f22b.svg",
-    "static/media/logo.svg": "/little-lemon/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/restaurant.jpg": "/little-lemon/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/bruchetta.jpg": "/little-lemon/static/media/bruchetta.cb712d379aa151dd2df0.jpg",
+    "static/media/greek-salad.jpg": "/little-lemon/static/media/greek-salad.7620eb8fa21263d55d5d.jpg",
+    "static/media/profile-3.jpg": "/little-lemon/static/media/profile-3.66a5aa3d4999e90b315c.jpg",
+    "static/media/Logo.svg": "/little-lemon/static/media/Logo.88426f747237a071f8147cf15f58ee8f.svg",
+    "static/media/profile-4.jpg": "/little-lemon/static/media/profile-4.3749cb2a3a81fd5f1eea.jpg",
+    "static/media/profile-2.jpg": "/little-lemon/static/media/profile-2.ca3d533ea65673f12fb1.jpg",
+    "static/media/profile-1.jpg": "/little-lemon/static/media/profile-1.86418473c9f1612a01f8.jpg",
     "index.html": "/little-lemon/index.html",
-    "main.785c6038.css.map": "/little-lemon/static/css/main.785c6038.css.map",
-    "main.e86d7d93.js.map": "/little-lemon/static/js/main.e86d7d93.js.map",
+    "static/media/star.svg": "/little-lemon/static/media/star.441fb02c5ec31adf2ca891f6557c5659.svg",
+    "main.ad1a8e7a.css.map": "/little-lemon/static/css/main.ad1a8e7a.css.map",
+    "main.da2baf9c.js.map": "/little-lemon/static/js/main.da2baf9c.js.map",
     "787.a2f6b77c.chunk.js.map": "/little-lemon/static/js/787.a2f6b77c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.785c6038.css",
-    "static/js/main.e86d7d93.js"
+    "static/css/main.ad1a8e7a.css",
+    "static/js/main.da2baf9c.js"
   ]
 }
