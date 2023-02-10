@@ -1,0 +1,29 @@
+@import './variables';
+
+.Box {
+    position: relative;
+    margin: 4rem 3rem 5rem 3rem;
+
+    & > img {
+        position: relative;
+        left: 3rem;
+        width: 70%;
+        height: 30rem;
+        object-fit: cover;
+        z-index: 1;
+        border-radius: 8px;
+        box-shadow: 0 1rem 3rem rgba(77, 64, 64, 0.25);
+    }
+
+    &::after {
+        content:'';
+        position: absolute;
+        z-index: 0;
+        top: 3rem;
+        left: 6rem;
+        width: 70%;
+        height: 30rem;
+        border-radius: 8px;
+        background-color: $color-primary;
+    }
+}

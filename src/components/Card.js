@@ -1,7 +1,6 @@
 import styles from './Card.module.scss';
 
 const Card = ({name, price, description, cardImage}) => {
-    console.log('received Image: ', cardImage)
     return (
         <li className={styles.Item}>
             <figure>

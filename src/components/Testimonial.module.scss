@@ -3,24 +3,44 @@
     overflow: hidden;
     box-shadow: 0 1rem 3rem rgba(77, 64, 64, 0.15);
     padding: 2.4rem;
+    background-color: #fff;
 }
+
 
 .Rating {
+    margin-bottom: 1rem;
+
+    & svg {
+        display: inline-block;
+        width: 1.4rem;
+        height: 1.4rem;
+        
+        &:not(:last-child) {
+            margin-right: 3px;
+        }
+    }
 
 }
 
+
+
 .Image {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 .Name {
     font-size: 1.4rem;
+    margin-bottom: 1rem;
+
 }
 
 .Message {
     font-size: 1.4rem;
     color: #777;
+    line-height: 1.5;
 }
 

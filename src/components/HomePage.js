@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './HomePage.module.scss';
 import Hero from './Hero';
 import Specials from './Specials';
-import TestimonialList from './TestimonialList';
+import Testimonials from './Testimonials';
+import AboutBusiness from './AboutBusiness';
 
 const HomePage = () => {
     return (
@@ -15,7 +16,8 @@ const HomePage = () => {
           minHeight="30rem"
         />
         <Specials />
-        <TestimonialList />
+        <Testimonials />
+        <AboutBusiness />
       </main>  
     );
 }
