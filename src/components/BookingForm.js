@@ -1,9 +1,10 @@
 
-const BookingForm = ({renderTimeOptions, updateTimes}) => {
+const BookingForm = ({renderTimeOptions, dispatch}) => {
     return (
         <form>
             <label htmlFor="date">Date</label>
-            <input type="date" id="date" onChange={updateTimes(['17:00', '18:00'])}/>
+            <input type="date" id="date" onChange={(e) => {
+                dispatch({type: e.target.value.split('-')[2]})}} />
             <label htmlFor="time">Time</label>
             <select id="time">
                 {renderTimeOptions()}
