@@ -1,12 +1,12 @@
 
-const BookingForm = ({renderTimeOptions, dispatch}) => {
+const BookingForm = ({renderTimeOptions, updateTimes}) => {
     return (
         <form>
             <label htmlFor="date">Date</label>
             <input type="date" id="date" onChange={(e) => {
-                dispatch({type: e.target.value.split('-')[2]})}} />
+                updateTimes(e)}} data-testid="select-date"/>
             <label htmlFor="time">Time</label>
-            <select id="time">
+            <select id="time" data-testid="select-time">
                 {renderTimeOptions()}
             </select>
             <label htmlFor="guests">Number of guests</label>

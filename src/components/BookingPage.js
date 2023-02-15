@@ -1,13 +1,12 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer, useEffect } from 'react';
 import BookingForm from './BookingForm';
 import styles from './BookingPage.module.scss';
 import Hero from './Hero';
 
 const BookingPage = () => {
+  const initializeTimes = () => {return {availableTimes: ['19:00', '19:30']}} 
 
-  const initialState = { availableTimes: ['17:00', '18:00', '19:00'] }
-
-    const reducer = (state, action) => { //어떻게 할지 액션별 실행 공식을 자세히 써놓은 것.
+  const reducer = (state, action) => { //어떻게 할지 액션별 실행 공식을 자세히 써놓은 것.
     if(action.type == '03') {
       return { ...state, 
         availableTimes: [
@@ -18,8 +17,6 @@ const BookingPage = () => {
     } else if (action.type =='04') {
       return { ...state, 
       availableTimes: [
-        '19:00',
-        '19:30',
         '20:00',
         '20:30',
         '21:00'
@@ -27,11 +24,15 @@ const BookingPage = () => {
     }
   }
 
-  const [ state, dispatch ] = useReducer(reducer, initialState)
+  const [ state, dispatch ] = useReducer(reducer, {}, initializeTimes)
+
+  const updateTimes = (e) => {
+    dispatch({type: e.target.value.split('-')[2]})
+  }
 
   const renderTimeOptions = () => {
     console.log('state value: ', state.availableTimes)
-    return state.availableTimes.map( (time) => <option key={time} value={time}>{time}</option> );
+    return state.availableTimes.map( (time) => <option key={time} value={time} data-testid="select-option">{time}</option> );
   }
 
   return (
@@ -45,7 +46,7 @@ const BookingPage = () => {
       <BookingForm 
         availableTimes={state.availableTimes} 
         renderTimeOptions={renderTimeOptions} 
-        dispatch={dispatch}
+        updateTimes={updateTimes}
       />
     </main>  
   );
