@@ -14,6 +14,9 @@ function App() {
   const navigate = useNavigate();
   const submitForm = (formData) => {
     if(submitAPI(formData)) {
+      let prevDataArr = JSON.parse(localStorage.getItem('BookingData'))
+      prevDataArr.push(formData)
+      localStorage.setItem('BookingData', JSON.stringify(prevDataArr));
       navigate('/booking-confirmed', {replace: true})
     }
   }

@@ -1,19 +1,36 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect, useState } from 'react';
 import { fetchAPI } from '../capstoneAPI';
+import BookingDataDisplay from './BookingDataDisplay';
 
 import BookingForm from './BookingForm';
 import styles from './BookingPage.module.scss';
 import Hero from './Hero';
 
 const BookingPage = ({submitForm}) => {
+  const [bookingData, setBookingData] = useState({
+    hasBookingData: false,
+    currentBookingData: []
+  })
 
+  useEffect(()=>{
+    const storedData = localStorage.getItem('BookingData');
+    if(storedData !== null) {
+      const data = JSON.parse(storedData);
+      setBookingData({
+        hasBookingData: true,
+        currentBookingData: data
+      })
+    }
+  }, [])
+
+  // --------------  useReducer Starts 
   const initializeTimes = () => {
     const todaysTimes = fetchAPI(new Date())
     return {availableTimes: todaysTimes}
   } 
 
-  const reducer = (state, action) => { //어떻게 할지 액션별 실행 공식을 자세히 써놓은 것.
-    const availableTimes = fetchAPI( new Date(action.type));
+  const reducer = (state, action) => {
+    const availableTimes = fetchAPI(new Date(action.type));
     return { ...state, 
         availableTimes:availableTimes}
   }
@@ -23,10 +40,7 @@ const BookingPage = ({submitForm}) => {
   const updateTimes = (e) => {
     dispatch({type: e.target.value})
   }
-
-  const renderTimeOptions = () => {
-    return state.availableTimes.map( (time) => <option key={time} value={time} data-testid="select-option">{time}</option> );
-  }
+  // --------------  useReducer Ends 
 
   return (
     <main className={styles.Box}>
@@ -36,12 +50,12 @@ const BookingPage = ({submitForm}) => {
         hasButton={false}
         minHeight="30rem" 
       />
-      {2 === 2 ? <BookingForm 
-                  availableTimes={state.availableTimes} 
-                  renderTimeOptions={renderTimeOptions} 
-                  updateTimes={updateTimes}
-                  submitForm={submitForm}
-                /> : ''}
+      { bookingData.hasBookingData && <BookingDataDisplay bookingData={bookingData.currentBookingData} /> }
+      <BookingForm 
+        availableTimes={state.availableTimes} 
+        updateTimes={updateTimes}
+        submitForm={submitForm}
+      />
     </main>  
   );
 }
