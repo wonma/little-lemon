@@ -3,7 +3,7 @@ const BookingDataDisplay = ({bookingData}) => {
         if(bookingData !== null) {
             return bookingData.map((data) => {
                 return (
-                    <tbody>
+                    <tbody key={data.name + data.phone}>
                         <tr>
                             <td>{data.name}</td>
                             <td>{data.phone}</td>
