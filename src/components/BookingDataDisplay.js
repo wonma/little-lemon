@@ -1,3 +1,6 @@
+import FullScreenSection from "./FullScreenSection";
+import styles from "./BookingDataDisplay.module.scss";
+
 const BookingDataDisplay = ({bookingData}) => {
     const renderBookingData = () => {
         if(bookingData !== null) {
@@ -18,19 +21,28 @@ const BookingDataDisplay = ({bookingData}) => {
         }
     } 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Tel</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Number of People</th>
-                    <th>Occasion</th>
-                </tr>
-            </thead>
-            { renderBookingData() }
-        </table>
+        <FullScreenSection
+            bgColor='#ffffff' 
+            fontColor='#333' 
+            bgImage='none'
+        >
+            <h2 className={styles.HeadingGuide}>Check out your booking information below.</h2>
+            <table className={styles.Table}>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Tel</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Number of People</th>
+                        <th>Occasion</th>
+                    </tr>
+                </thead>
+                { renderBookingData() }
+            </table>
+        </FullScreenSection>
+
+
     )
 }
 

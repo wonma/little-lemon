@@ -1,10 +1,12 @@
 import styles from './Button.module.scss';
+import { Link } from 'react-router-dom';
 
-const Button = ({children}) => {
+
+const Button = ({buttonLink, children}) => {
     return (
-        <a href="#" role="button" className={styles.Link}>
+        <Link to={buttonLink} role="button" className={styles.Link}>
             {children}
-        </a>
+        </Link>
     );
 }
 

@@ -12,6 +12,7 @@ const HomePage = () => {
           title="Little Lemon" 
           leadText="We are a family-owned Mediterrian restaurant with a modern twist." 
           hasButton={true} 
+          buttonLink="/booking"
           button="Reserve a Table"
           minHeight="30rem"
         />

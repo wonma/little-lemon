@@ -3,7 +3,7 @@ import RestaurantJPG from '../img/restaurant.jpg';
 import styles from './Hero.module.scss';
 import Button from "./Button";
 
-const Hero = ({title, leadText, hasButton, button, minHeight}) => {
+const Hero = ({title, leadText, hasButton, button, buttonLink, minHeight}) => {
     return (
         <FullScreenSection 
             bgColor='#495E57' 
@@ -13,7 +13,7 @@ const Hero = ({title, leadText, hasButton, button, minHeight}) => {
         >
           <h1 className={styles.Title}>{title}</h1>
           <p className={styles.LeadText}>{leadText}</p>
-          { hasButton && <Button>{button}</Button> }
+          { hasButton && <Button buttonLink={buttonLink}>{button}</Button> }
         </FullScreenSection>
     );
 }

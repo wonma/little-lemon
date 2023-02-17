@@ -1,17 +1,16 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { fetchAPI } from '../capstoneAPI';
 import BookingDataDisplay from './BookingDataDisplay';
+import { useBookingData } from '../context/BookingDataContext';
 
 import BookingForm from './BookingForm';
 import styles from './BookingPage.module.scss';
 import Hero from './Hero';
 
 const BookingPage = ({submitForm}) => {
-  const [bookingData, setBookingData] = useState({
-    hasBookingData: false,
-    currentBookingData: []
-  })
+  const {bookingData, setBookingData} = useBookingData();
 
+  console.log('hasBookingData: ', bookingData.hasBookingData)
   useEffect(()=>{
     const storedData = localStorage.getItem('BookingData');
     if(storedData !== null) {
