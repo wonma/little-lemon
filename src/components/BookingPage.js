@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useState } from 'react';
 import { fetchAPI } from '../capstoneAPI';
 import BookingDataDisplay from './BookingDataDisplay';
-import { useBookingData } from '../context/BookingDataContext';
+// import { useBookingData } from '../context/BookingDataContext';
 
 import BookingForm from './BookingForm';
 import styles from './BookingPage.module.scss';

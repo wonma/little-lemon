@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { useBookingData } from '../context/BookingDataContext';
+// import { useEffect } from 'react';
+// import { useBookingData } from '../context/BookingDataContext';
 
 import FullScreenSection from './FullScreenSection';
-import BookingDataDisplay from './BookingDataDisplay';
+// import BookingDataDisplay from './BookingDataDisplay';
 import styles from './ConfirmedBooking.module.scss';
 import Hero from './Hero';
 
