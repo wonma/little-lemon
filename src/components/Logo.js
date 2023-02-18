@@ -8,7 +8,7 @@ const Logo = () => {
     return (
         <figure className={styles.Box}>
             <Link to="/little-lemon" className={styles.Link}>
-                <img src={LogoSVG} className={styles.Image}/>
+                <img src={LogoSVG} className={styles.Image} alt="logo" />
             </Link>
         </figure>
     )

@@ -1,4 +1,4 @@
-const FullScreenSection = ({children, minHeight, bgColor, fontColor, bgImage}) => {
+const FullScreenSection = ({children, minHeight, bgColor, fontColor, bgImage, title}) => {
     const bgDetails = `linear-gradient(75deg, #000 20%, transparent 100%), url(${bgImage})`;
 
     const sectionStyles = {
@@ -22,7 +22,7 @@ const FullScreenSection = ({children, minHeight, bgColor, fontColor, bgImage}) =
       }
         
     return (
-        <section style={sectionStyles}>
+        <section style={sectionStyles} aria-label={title}>
             <div style={innerContainer}>
                 {children}
             </div>

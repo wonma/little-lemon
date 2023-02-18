@@ -3,8 +3,8 @@ import styles from './VSpreadMenu.module.scss';
 const VSpreadMenu = ({columnMenuData}) => {
     return (
         <nav aria-label={columnMenuData.heading} className={styles.Box}>
+            <h3>{columnMenuData.heading}</h3> 
             <ul>
-                <h3>{columnMenuData.heading}</h3> 
                 {
                     columnMenuData.links.map((link) => {
                         return (

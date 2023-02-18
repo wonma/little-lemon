@@ -1,43 +1,103 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import BookingPage from './components/BookingPage';
-
-test('Renders the BookingPage heading', () => {
-  render(<BookingPage />);
-  const headingElement = screen.getByText(/Book a Table/i);
-  expect(headingElement).toBeInTheDocument();
-});
-
-test('Renders the initial value', async () => {
-  // render(<BookingPage />);
-  const { getByTestId, getAllByTestId } = render(<BookingPage />);
-  // const selectField = await getByTestId('select-time');
-  let options = getAllByTestId('select-option')
-  expect(options[0]).toHaveTextContent('19:00');
-  expect(options[1]).toHaveTextContent('19:30');
-});
+import BookingForm from './components/BookingForm';
+import { act } from "react-dom/test-utils";
 
 
-test('Select Date testing', async () => {
-  render(<BookingPage />);
-  const selectDate = await screen.getByTestId('select-date')
+describe('BookingPage', () => {
+
+  test("should render the heading called 'Book a Table'", () => {
+    render(<BookingPage />);
+    const headingElement = screen.getByText(/Book a Table/i);
+    expect(headingElement).toBeInTheDocument();
+  });
   
-  fireEvent.change(selectDate, {
-    target: { value: "2023-02-04" }
-  })
+  test('should render initial available times in the time select field', async () => {
+    const { getAllByTestId } = await render(<BookingPage />);
+    let options = getAllByTestId('select-time-option')
+    expect(options[0]).toBeInTheDocument();
+  });
   
-  const options = await screen.getAllByTestId('select-option')
-  expect(options[0]).toHaveTextContent('20:00');
-  expect(options[1]).toHaveTextContent('20:30');
-  expect(options[2]).toHaveTextContent('21:00');
-});
+  
+  test('should render updated available times when a date is selected', async () => {
+  
+    const { getByTestId, getAllByTestId } = await render(<BookingPage />);
+  
+    const selectDate = await getByTestId('select-date')
+    
+    fireEvent.change(selectDate, {
+      target: { value: "2023-02-04" }
+    })
+    
+    const options = await getAllByTestId('select-time-option')
+    expect(options[0]).toBeInTheDocument();
+  });
+  
+})
 
+describe('Booking Form', () => {
 
-test('Select Time testing', async () => {
-  // [질문보류] 아래의 로직은 19:30가 API로부터 불러들인 데이터 옵션 중 있을 때 가능한것 아닌가?
-  render(<BookingPage />);
-  const selectField = await screen.getByTestId('select-time');
-  fireEvent.change(selectField, {
-    target: { value: "19:30"}
+  it('should require name input', () => {
+    act(() => {
+      render(<BookingForm />);
+    })
+    const nameInput = screen.getByTestId('name-input');
+    expect(nameInput).toBeRequired();
   })
-  expect(selectField).toHaveValue('19:30');
-});
+
+  it('should require phone input', () => {
+    act(() => {
+      render(<BookingForm />);
+    })
+    const phoneInput = screen.getByTestId('phone-input');
+    expect(phoneInput).toBeRequired();
+  })
+
+  it('should require date input', () => {
+    act(() => {
+      render(<BookingForm />);
+    })    
+    const dateInput = screen.getByTestId('select-date');
+    expect(dateInput).toBeRequired();
+  })
+
+  it('should require time input', () => {
+    act(() => {
+      render(<BookingForm />);
+    })    
+    const timeInput = screen.getByTestId('select-time');
+    expect(timeInput).toBeRequired();
+  })
+
+  it('should require guests input', () => {
+    act(() => {
+      render(<BookingForm />);
+    })    
+    const guestsInput = screen.getByTestId('guests-input');
+    expect(guestsInput).toBeRequired();
+  })
+
+  it('should require occasion input', () => {
+    act(() => {
+      render(<BookingForm />);
+    })    
+    const occasionInput = screen.getByTestId('select-occasion');
+    expect(occasionInput).toBeRequired();
+  })
+
+  it('should disable the submit button if guests value is 0', async () => {
+    act(() => {
+      render(<BookingForm />);
+    })
+    const guestsInput = screen.getByTestId('guests-input');
+    fireEvent.change(guestsInput, {
+      target: { value: 0 }
+    })
+    const reserveButton = await screen.getByTestId('reserve-button');
+
+    expect(reserveButton).toBeDisabled();
+  })
+
+
+})

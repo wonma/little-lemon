@@ -48,6 +48,7 @@ const Specials = () => {
             bgColor='#fff' 
             fontColor='#333' 
             bgImage='none'
+            title='Special Menu Items'
         >
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: '2rem'}}>
                 <h2 style={{fontSize: '3rem'}}>Specials</h2>

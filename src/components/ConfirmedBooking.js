@@ -7,19 +7,18 @@ import styles from './ConfirmedBooking.module.scss';
 import Hero from './Hero';
 
 const ConfirmedBooking = () => {
-  const {bookingData, setBookingData} = useBookingData();
+  // const {bookingData, setBookingData} = useBookingData();
 
-  console.log('hasBookingData: ', bookingData.hasBookingData)
-  useEffect(()=>{
-    const storedData = localStorage.getItem('BookingData');
-    if(storedData !== null) {
-      const data = JSON.parse(storedData);
-      setBookingData({
-        hasBookingData: true,
-        currentBookingData: data
-      })
-    }
-  }, [])
+  // useEffect(()=>{
+  //   const storedData = localStorage.getItem('BookingData');
+  //   if(storedData !== null) {
+  //     const data = JSON.parse(storedData);
+  //     setBookingData({
+  //       hasBookingData: true,
+  //       currentBookingData: data
+  //     })
+  //   }
+  // }, [])
 
     return (
       <main className={styles.Box}>
@@ -34,7 +33,8 @@ const ConfirmedBooking = () => {
             fontColor='#333' 
             bgImage='none'
         >
-          { bookingData.hasBookingData && <BookingDataDisplay bookingData={bookingData.currentBookingData} /> }
+          <h2>Booking has been complete!</h2>
+          {/* { bookingData.hasBookingData && <BookingDataDisplay bookingData={bookingData.currentBookingData} /> } */}
         </FullScreenSection>
       </main>  
     );

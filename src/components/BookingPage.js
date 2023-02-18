@@ -8,9 +8,12 @@ import styles from './BookingPage.module.scss';
 import Hero from './Hero';
 
 const BookingPage = ({submitForm}) => {
-  const {bookingData, setBookingData} = useBookingData();
+  // const {bookingData, setBookingData} = useBookingData();
+  const [bookingData, setBookingData] = useState({
+    hasBookingData: false,
+    currentBookingData: []
+});
 
-  console.log('hasBookingData: ', bookingData.hasBookingData)
   useEffect(()=>{
     const storedData = localStorage.getItem('BookingData');
     if(storedData !== null) {

@@ -10,6 +10,7 @@ const Hero = ({title, leadText, hasButton, button, buttonLink, minHeight}) => {
             fontColor='#f7f7f7' 
             bgImage={RestaurantJPG}
             minHeight={minHeight}
+            title={title}
         >
           <h1 className={styles.Title}>{title}</h1>
           <p className={styles.LeadText}>{leadText}</p>
