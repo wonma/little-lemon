@@ -33,7 +33,7 @@ const BookingForm = ({availableTimes, updateTimes, submitForm}) => {
             name: '',
             phone: '',
             date: new Date().toISOString().slice(0, 10),
-            time: '',
+            time: availableTimes ? availableTimes[0] : '',
             guests: 0,
             occasion: 'birthday'
         },
@@ -50,7 +50,7 @@ const BookingForm = ({availableTimes, updateTimes, submitForm}) => {
             bgImage='none'
         >
             <form onSubmit={formik.handleSubmit} className={styles.Form}>
-                <h2 className={styles.HeadingGuide}>Start reservation</h2>
+                <h2 className={styles.HeadingGuide}>Book your table now</h2>
                 <label htmlFor="name">Name</label>
                 <input 
                     type="text" 

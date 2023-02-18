@@ -1,3 +1,7 @@
 .Box {
     background-color: #fff;
+
+    & h2 {
+        font-size: 2rem;
+    }
 }

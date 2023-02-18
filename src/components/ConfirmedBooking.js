@@ -2,6 +2,7 @@
 // import { useBookingData } from '../context/BookingDataContext';
 
 import FullScreenSection from './FullScreenSection';
+import Button from './Button';
 // import BookingDataDisplay from './BookingDataDisplay';
 import styles from './ConfirmedBooking.module.scss';
 import Hero from './Hero';
@@ -34,6 +35,7 @@ const ConfirmedBooking = () => {
             bgImage='none'
         >
           <h2>Booking has been complete!</h2>
+          <Button buttonLink='/booking'>Go to the Booking Page</Button>
           {/* { bookingData.hasBookingData && <BookingDataDisplay bookingData={bookingData.currentBookingData} /> } */}
         </FullScreenSection>
       </main>  
